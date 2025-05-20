@@ -35,37 +35,32 @@ public class MusicMod
 {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "musicmod";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "musicmod" namespace
+
+    // Deferred Registers for various game elements
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the "musicmod" namespace
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
-    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "musicmod" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-    // Create a Deferred Register to hold Music Discs which will all be registered under the "musicmod" namespace
     public static final DeferredRegister<Item> MUSIC_DISCS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
-    // Creates a new Block with the id "musicmod:example_block", combining the namespace and path
+    // Example block and its associated item
     public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
-    // Creates a new BlockItem with the id "musicmod:example_block", combining the namespace and path
     public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
 
-    // Creates a new food item with the id "musicmod:example_id", nutrition 1 and saturation 2
+    // Example items
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
             .alwaysEdible().nutrition(1).saturationModifier(2f).build())));
-
-    // Example of a new music disc item
     public static final RegistryObject<Item> EXAMPLE_MUSIC_DISC = MUSIC_DISCS.register("example_music_disc", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
 
-    // Creates a creative tab with the id "musicmod:example_tab" for the example item, that is placed after the combat tab
+    // Example creative mode tab
     public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(EXAMPLE_ITEM.get());
             }).build());
 
+    // Event listeners and setup methods
     public MusicMod(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
@@ -73,25 +68,23 @@ public class MusicMod
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        // Register the Deferred Register to the mod event bus so blocks get registered
+        // Register Deferred Registers to the mod event bus
         BLOCKS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
         ITEMS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so music discs get registered
         MUSIC_DISCS.register(modEventBus);
 
-        // Register ourselves for server and other game events we are interested in
+        // Register for server and other game events
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
+        // Register mod's ForgeConfigSpec
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
+    // Common setup method
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         // Some common setup code
@@ -105,7 +98,7 @@ public class MusicMod
         Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
 
-    // Add the example block item to the building blocks tab
+    // Add items to creative tabs
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
@@ -115,7 +108,7 @@ public class MusicMod
         }
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
+    // Server starting event
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
