@@ -1,0 +1,48 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+# Files from Forge MDK
+forge*changelog.txt
+
+# Minecraft-specific files
+logs/
+crash-reports/
+saves/
+mods/
+resourcepacks/
+options.txt
+usercache.json
+usernamecache.json
+
+# Generated files
+run/
+run-data/
+src/generated/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Build artifacts
+*.jar
+*.class
