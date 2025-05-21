@@ -2,6 +2,7 @@ package com.ryan.musicmod;
 
 import com.mojang.logging.LogUtils;
 import com.ryan.musicmod.Items.ModItems;
+import com.ryan.musicmod.blocks.ModBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -49,6 +50,7 @@ public class MusicMod
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -71,6 +73,12 @@ public class MusicMod
             event.accept(ModItems.GRAPE_POPPI);
             event.accept(ModItems.STRAWBERRY_LEMON_POPPI);
             event.accept(ModItems.RASPBERRY_ROSE_POPPI);
+        }
+        else if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
+        {
+            event.accept(ModBlocks.RAINBOW_GLASS_BLOCK);
+            event.accept(ModBlocks.AURORA_GLASS_BLOCK);
+            event.accept(ModBlocks.RAINBOW_BOOKSHELF_BLOCK);
         }
     }
 

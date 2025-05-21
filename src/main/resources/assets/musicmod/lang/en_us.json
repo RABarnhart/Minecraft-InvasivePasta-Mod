@@ -2,5 +2,9 @@
     "item.musicmod.orange_poppi": "Orange Poppi",
     "item.musicmod.strawberry_lemon_poppi": "Strawberry Lemon Poppi",
     "item.musicmod.raspberry_rose_poppi": "Raspberry Rose Poppi",
-    "item.musicmod.grape_poppi": "Grape Poppi"
+    "item.musicmod.grape_poppi": "Grape Poppi",
+
+    "block.musicmod.rainbow_bookshelf_block": "Rainbow Bookshelf",
+    "block.musicmod.rainbow_glass_block": "Rainbow Glass",
+    "block.musicmod.aurora_glass_block": "Aurora Glass"
 }
