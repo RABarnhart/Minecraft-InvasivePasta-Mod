@@ -10,6 +10,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,23 +22,19 @@ public class ModBlocks {
         = DeferredRegister.create(ForgeRegistries.BLOCKS, "musicmod");
 
     public static final RegistryObject<Block> RAINBOW_GLASS_BLOCK = registerBlock("rainbow_glass_block", 
-    () -> new Block(Block.Properties.of()
-            .strength(0.3f)
-            .sound(SoundType.GLASS)
-    ));
+        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
+        ));
 
     public static final RegistryObject<Block> AURORA_GLASS_BLOCK = registerBlock("aurora_glass_block", 
-    () -> new Block(Block.Properties.of()
-            .strength(0.3f)
-            .sound(SoundType.GLASS)
-    ));
+        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
+        ));
 
-        public static final RegistryObject<Block> RAINBOW_BOOKSHELF_BLOCK = registerBlock("rainbow_bookshelf_block", 
-    () -> new Block(Block.Properties.of()
+    public static final RegistryObject<Block> RAINBOW_BOOKSHELF_BLOCK = registerBlock("rainbow_bookshelf_block", 
+        () -> new Block(Block.Properties.of()
             .strength(1f)
             .mapColor(DyeColor.BROWN)
             .sound(SoundType.WOOD)
-    ));
+        ));
             
 
     // Register Blocks with a name and a block object
