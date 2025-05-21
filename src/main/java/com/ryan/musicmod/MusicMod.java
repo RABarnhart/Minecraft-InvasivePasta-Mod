@@ -5,7 +5,6 @@ import com.ryan.musicmod.Items.ModItems;
 import com.ryan.musicmod.blocks.ModBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
