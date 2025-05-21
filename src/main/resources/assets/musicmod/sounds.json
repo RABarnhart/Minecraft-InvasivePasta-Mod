@@ -1,0 +1,10 @@
+{
+  "example_song": {
+    "sounds": [
+        {
+      "name" : "musicmod:example_song",
+      "stream" : true
+        }
+    ]
+  }
+}
