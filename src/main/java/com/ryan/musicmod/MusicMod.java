@@ -67,7 +67,10 @@ public class MusicMod
     {
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
         {
-            event.accept(ModItems.POPPI);
+            event.accept(ModItems.ORANGE_POPPI);
+            event.accept(ModItems.GRAPE_POPPI);
+            event.accept(ModItems.STRAWBERRY_LEMON_POPPI);
+            event.accept(ModItems.RASPBERRY_ROSE_POPPI);
         }
     }
 

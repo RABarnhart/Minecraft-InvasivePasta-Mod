@@ -1,3 +1,6 @@
 {
-    "item.musicmod.poppi" : "Poppi"
+    "item.musicmod.orange_poppi": "Orange Poppi",
+    "item.musicmod.strawberry_lemon_poppi": "Strawberry Lemon Poppi",
+    "item.musicmod.raspberry_rose_poppi": "Raspberry Rose Poppi",
+    "item.musicmod.grape_poppi": "Grape Poppi"
 }
