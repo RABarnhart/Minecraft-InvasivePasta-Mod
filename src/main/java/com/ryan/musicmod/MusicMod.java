@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.ryan.musicmod.Items.ModItems;
 import com.ryan.musicmod.blocks.ModBlocks;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,6 +29,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -89,13 +92,14 @@ public class MusicMod
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+    @Mod.EventBusSubscriber(modid = MusicMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public class MusicModClient {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> {
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.RAINBOW_GLASS_BLOCK.get(), RenderType.translucent());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.AURORA_GLASS_BLOCK.get(), RenderType.translucent());
+            });
         }
-    }
+}
 }

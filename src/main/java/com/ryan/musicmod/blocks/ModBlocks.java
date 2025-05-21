@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.TransparentBlock;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,11 +23,11 @@ public class ModBlocks {
         = DeferredRegister.create(ForgeRegistries.BLOCKS, "musicmod");
 
     public static final RegistryObject<Block> RAINBOW_GLASS_BLOCK = registerBlock("rainbow_glass_block", 
-        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
+        () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
         ));
 
     public static final RegistryObject<Block> AURORA_GLASS_BLOCK = registerBlock("aurora_glass_block", 
-        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
+        () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
         ));
 
     public static final RegistryObject<Block> RAINBOW_BOOKSHELF_BLOCK = registerBlock("rainbow_bookshelf_block", 
