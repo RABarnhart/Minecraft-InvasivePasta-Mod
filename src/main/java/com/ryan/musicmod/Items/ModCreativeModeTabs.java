@@ -17,7 +17,7 @@ public class ModCreativeModeTabs {
 
     public static final RegistryObject<CreativeModeTab> ALL_MOD_ITEMS_TAB = CREATIVE_MODE_TABS.register("music_mod_items_tab",
         () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.RAINBOW_BOOKSHELF_BLOCK.get()))
-        .title(Component.translatable("creativetab.musicmod.musicmod_itmes"))
+        .title(Component.translatable("creativetab.musicmod.musicmod_items"))
         .displayItems((itemDisplayParameters, output) -> {
             output.accept(ModBlocks.RAINBOW_BOOKSHELF_BLOCK.get());
             output.accept(ModBlocks.AURORA_GLASS_BLOCK.get());
