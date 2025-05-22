@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/glass",
+  "textures": {
+    "all": "musicmod:block/rainbow_glass_block"
+  }
+}

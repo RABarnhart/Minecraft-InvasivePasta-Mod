@@ -1,0 +1,7 @@
+{
+    "variants" : {
+        "" : {
+            "model": "musicmod:block/rainbow_glass_block"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "variants" : {
+        "" : {
+            "model": "musicmod:block/aurora_glass_block"
+        }
+    }
+}
