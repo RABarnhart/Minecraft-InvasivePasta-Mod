@@ -1,6 +1,7 @@
 package com.ryan.musicmod;
 
 import com.mojang.logging.LogUtils;
+import com.ryan.musicmod.Items.ModCreativeModeTabs;
 import com.ryan.musicmod.Items.ModItems;
 import com.ryan.musicmod.blocks.ModBlocks;
 import net.minecraft.client.Minecraft;
@@ -53,6 +54,7 @@ public class MusicMod
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
