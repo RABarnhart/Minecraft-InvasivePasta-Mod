@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cube_column",
   "textures": {
     "end": "minecraft:block/oak_planks",
-    "side": "musicmod:block/rainbow_bookshelf_block"
+    "side": "pastamod:block/rainbow_bookshelf_block"
   }
 }

@@ -1,0 +1,7 @@
+{
+    "variants" : {
+        "" : {
+            "model": "pastamod:block/rainbow_bookshelf_block"
+        }
+    }
+}

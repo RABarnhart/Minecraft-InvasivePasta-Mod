@@ -1,4 +1,4 @@
-package com.ryan.musicmod.blocks.custom;
+package com.ryan.pastamod.blocks.custom;
 
 import net.minecraft.world.level.block.FurnaceBlock;
 
@@ -24,13 +24,13 @@ public class BreadMachineBlock extends FurnaceBlock {
     // @Override
     // public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
     //     // Use your custom block entity type for ticking
-    //     return createFurnaceTicker(level, type, com.ryan.musicmod.registry.ModBlockEntities.BREAD_MACHINE.get());
+    //     return createFurnaceTicker(level, type, com.ryan.pastamod.registry.ModBlockEntities.BREAD_MACHINE.get());
     // }
 
     // @Override
     // protected void openContainer(Level level, BlockPos pos, Player player) {
     //     BlockEntity blockentity = level.getBlockEntity(pos);
-    //     if (blockentity instanceof com.ryan.musicmod.blocks.entity.BreadMachineBlockEntity) {
+    //     if (blockentity instanceof com.ryan.pastamod.blocks.entity.BreadMachineBlockEntity) {
     //         player.openMenu((MenuProvider) blockentity);
     //         player.awardStat(net.minecraft.stats.Stats.INTERACT_WITH_FURNACE);
     //     }

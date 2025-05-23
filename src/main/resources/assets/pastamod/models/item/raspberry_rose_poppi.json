@@ -1,6 +1,6 @@
 {
     "parent" : "minecraft:item/generated",
     "textures" : {
-        "layer0" : "musicmod:item/orange_poppi"
+        "layer0" : "pastamod:item/raspberry_rose_poppi"
     }
 }

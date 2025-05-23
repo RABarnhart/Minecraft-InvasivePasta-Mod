@@ -1,9 +1,10 @@
-package com.ryan.musicmod;
+package com.ryan.pastamod;
 
 import com.mojang.logging.LogUtils;
-import com.ryan.musicmod.Items.ModCreativeModeTabs;
-import com.ryan.musicmod.Items.ModItems;
-import com.ryan.musicmod.blocks.ModBlocks;
+import com.ryan.pastamod.Items.ModCreativeModeTabs;
+import com.ryan.pastamod.Items.ModItems;
+import com.ryan.pastamod.blocks.ModBlocks;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.core.registries.Registries;
@@ -35,15 +36,15 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(MusicMod.MODID)
-public class MusicMod
+@Mod(PastaMod.MODID)
+public class PastaMod
 {
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "musicmod";
+    public static final String MODID = "pastamod";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     // Event listeners and setup methods
-    public MusicMod(FMLJavaModLoadingContext context)
+    public PastaMod(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
 
@@ -94,8 +95,8 @@ public class MusicMod
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MusicMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public class MusicModClient {
+    @Mod.EventBusSubscriber(modid = PastaMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public class PastaModClient {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
