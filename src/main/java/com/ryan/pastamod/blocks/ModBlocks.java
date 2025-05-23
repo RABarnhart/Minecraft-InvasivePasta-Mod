@@ -2,10 +2,8 @@ package com.ryan.pastamod.blocks;
 
 import java.util.function.Supplier;
 
-import com.ryan.pastamod.PastaMod;
 import com.ryan.pastamod.Items.ModItems;
 
-import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;

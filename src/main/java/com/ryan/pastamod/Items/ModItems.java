@@ -3,7 +3,6 @@ package com.ryan.pastamod.Items;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.alchemy.PotionContents;
 
 import com.ryan.pastamod.PastaMod;
 
