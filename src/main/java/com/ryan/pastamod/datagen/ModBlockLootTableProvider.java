@@ -22,7 +22,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider{
     protected void generate() {
         dropWhenSilkTouch(ModBlocks.RAINBOW_GLASS_BLOCK.get());
         dropWhenSilkTouch(ModBlocks.AURORA_GLASS_BLOCK.get());
-        this.add(Blocks.BOOKSHELF, p_250379_ -> this.createSingleItemTableWithSilkTouch(p_250379_, Items.BOOK, ConstantValue.exactly(3.0F)));
+        this.add(ModBlocks.RAINBOW_BOOKSHELF_BLOCK.get(), p_250379_ -> this.createSingleItemTableWithSilkTouch(p_250379_, Items.BOOK, ConstantValue.exactly(3.0F)));
     }
 
     @Override
