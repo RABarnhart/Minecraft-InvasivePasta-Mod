@@ -29,6 +29,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider{
         dropWhenSilkTouch(ModBlocks.GLASS_FENCE_GATE.get());
         dropWhenSilkTouch(ModBlocks.GLASS_WALL.get());
         dropWhenSilkTouch(ModBlocks.GLASS_BUTTON.get());
+        dropWhenSilkTouch(ModBlocks.GLASS_PRESSURE_PLATE.get());
         this.add(ModBlocks.GLASS_DOOR.get(), block -> createDoorTable(ModBlocks.GLASS_DOOR.get()));
         this.add(ModBlocks.GLASS_SLAB.get(), block -> createSlabItemTable(ModBlocks.GLASS_SLAB.get()));
     }
