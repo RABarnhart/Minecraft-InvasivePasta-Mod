@@ -15,6 +15,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     protected void registerStatesAndModels() {
+        blockWithItem(ModBlocks.RAINBOW_BOOKSHELF_BLOCK);
         blockWithItem(ModBlocks.RAINBOW_GLASS_BLOCK);
         blockWithItem(ModBlocks.AURORA_GLASS_BLOCK);
     }
@@ -23,13 +24,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 
-    // public BlockStateProviderType type() {
-    //     // Return a default BlockState or implement your logic here
-    //     throw new UnsupportedOperationException("Not implemented yet");
-    // }
-
-    // public BlockState getState(RandomSource source, BlockPos pos) {
-    //     // Return a default BlockState or implement your logic here
-    //     throw new UnsupportedOperationException("Not implemented yet");
-    // }
+    private void blockWithItemColumn(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
 }

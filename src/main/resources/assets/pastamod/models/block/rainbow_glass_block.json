@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/glass",
-  "textures": {
-    "all": "pastamod:block/rainbow_glass_block"
-  }
-}
