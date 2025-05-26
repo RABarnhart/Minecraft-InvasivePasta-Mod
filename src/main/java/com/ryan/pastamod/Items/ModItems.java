@@ -1,8 +1,11 @@
-package com.ryan.musicmod.Items;
+package com.ryan.pastamod.Items;
 
-import com.ryan.musicmod.MusicMod;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PotionItem;
 import net.minecraft.world.item.Rarity;
+
+import com.ryan.pastamod.PastaMod;
+
 import net.minecraft.world.food.FoodProperties;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -11,10 +14,10 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = 
-        DeferredRegister.create(ForgeRegistries.ITEMS, MusicMod.MODID);
+        DeferredRegister.create(ForgeRegistries.ITEMS, PastaMod.MODID);
 
     public static final RegistryObject<Item> ORANGE_POPPI = ITEMS.register("orange_poppi", 
-        () -> new Item(new Item.Properties()
+        () -> new PotionItem(new Item.Properties()
             .stacksTo(16)
             .rarity(Rarity.EPIC)
             .food(new FoodProperties.Builder()
@@ -23,7 +26,7 @@ public class ModItems {
                 .build())));
 
     public static final RegistryObject<Item> GRAPE_POPPI = ITEMS.register("grape_poppi",
-        () -> new Item(new Item.Properties()
+        () -> new PotionItem(new Item.Properties()
             .stacksTo(16)
             .rarity(Rarity.EPIC)
             .food(new FoodProperties.Builder()
@@ -32,7 +35,7 @@ public class ModItems {
                 .build())));
     
     public static final RegistryObject<Item> STRAWBERRY_LEMON_POPPI = ITEMS.register("strawberry_lemon_poppi",
-        () -> new Item(new Item.Properties()
+        () -> new PotionItem(new Item.Properties()
             .stacksTo(16)
             .rarity(Rarity.EPIC)
             .food(new FoodProperties.Builder()
@@ -41,7 +44,7 @@ public class ModItems {
                 .build())));
 
     public static final RegistryObject<Item> RASPBERRY_ROSE_POPPI = ITEMS.register("raspberry_rose_poppi",
-        () -> new Item(new Item.Properties()
+        () -> new PotionItem(new Item.Properties()
             .stacksTo(16)
             .rarity(Rarity.EPIC)
             .food(new FoodProperties.Builder()

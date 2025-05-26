@@ -1,10 +1,9 @@
-package com.ryan.musicmod.blocks;
+package com.ryan.pastamod.blocks;
 
 import java.util.function.Supplier;
-import com.ryan.musicmod.MusicMod;
-import com.ryan.musicmod.Items.ModItems;
 
-import net.minecraft.client.resources.sounds.Sound;
+import com.ryan.pastamod.Items.ModItems;
+
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -20,7 +19,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS
-        = DeferredRegister.create(ForgeRegistries.BLOCKS, "musicmod");
+        = DeferredRegister.create(ForgeRegistries.BLOCKS, "pastamod");
 
     public static final RegistryObject<Block> RAINBOW_GLASS_BLOCK = registerBlock("rainbow_glass_block", 
         () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)

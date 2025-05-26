@@ -2,7 +2,7 @@
   "example_song": {
     "sounds": [
         {
-      "name" : "musicmod:example_song",
+      "name" : "pastamod:example_song",
       "stream" : true
         }
     ]

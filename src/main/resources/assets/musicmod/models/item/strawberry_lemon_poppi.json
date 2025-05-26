@@ -1,6 +1,0 @@
-{
-    "parent" : "minecraft:item/generated",
-    "textures" : {
-        "layer0" : "musicmod:item/strawberry_lemon_poppi"
-    }
-}

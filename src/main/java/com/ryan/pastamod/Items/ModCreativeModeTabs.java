@@ -1,7 +1,7 @@
-package com.ryan.musicmod.Items;
+package com.ryan.pastamod.Items;
 
-import com.ryan.musicmod.MusicMod;
-import com.ryan.musicmod.blocks.ModBlocks;
+import com.ryan.pastamod.PastaMod;
+import com.ryan.pastamod.blocks.ModBlocks;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -13,11 +13,11 @@ import net.minecraft.world.item.ItemStack;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS
-        = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MusicMod.MODID);
+        = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PastaMod.MODID);
 
-    public static final RegistryObject<CreativeModeTab> ALL_MOD_ITEMS_TAB = CREATIVE_MODE_TABS.register("music_mod_items_tab",
+    public static final RegistryObject<CreativeModeTab> ALL_MOD_ITEMS_TAB = CREATIVE_MODE_TABS.register("pasta_mod_items_tab",
         () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.RAINBOW_BOOKSHELF_BLOCK.get()))
-        .title(Component.translatable("creativetab.musicmod.musicmod_itmes"))
+        .title(Component.translatable("creativetab.pastamod.pastamod_itmes"))
         .displayItems((itemDisplayParameters, output) -> {
             output.accept(ModBlocks.RAINBOW_BOOKSHELF_BLOCK.get());
             output.accept(ModBlocks.AURORA_GLASS_BLOCK.get());
