@@ -1,6 +1,7 @@
 package com.ryan.pastamod.datagen;
 
 import com.ryan.pastamod.PastaMod;
+import com.ryan.pastamod.Items.ModItems;
 
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -13,6 +14,9 @@ public class ModItemModelProvider extends ItemModelProvider{
 
     @Override
     protected void registerModels() {
-        
+        basicItem(ModItems.GRAPE_POPPI.get());
+        basicItem(ModItems.ORANGE_POPPI.get());
+        basicItem(ModItems.STRAWBERRY_LEMON_POPPI.get());
+        basicItem(ModItems.RASPBERRY_ROSE_POPPI.get());
     }
 }
