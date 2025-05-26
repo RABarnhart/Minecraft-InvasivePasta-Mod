@@ -15,7 +15,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     protected void registerStatesAndModels() {
-        blockWithItem(ModBlocks.RAINBOW_BOOKSHELF_BLOCK);
+        blockWithItemColumn(ModBlocks.RAINBOW_BOOKSHELF_BLOCK, "block/rainbow_bookshelf_block", "block/oak_planks");
         blockWithItem(ModBlocks.RAINBOW_GLASS_BLOCK);
         blockWithItem(ModBlocks.AURORA_GLASS_BLOCK);
     }
@@ -24,7 +24,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 
-    private void blockWithItemColumn(RegistryObject<Block> blockRegistryObject) {
-        simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    private void blockWithItemColumn(RegistryObject<Block> blockRegistryObject, String sideTexture, String endTexture) {
+        simpleBlockWithItem(
+            blockRegistryObject.get(),
+            models().cubeColumn(
+                blockRegistryObject.getId().getPath(),
+                modLoc(sideTexture),
+                mcLoc(endTexture)
+            )
+        );
     }
 }
