@@ -36,26 +36,19 @@ public class ModBlocks {
         // GLASS NON-BLOCK BLOCKS
     public static final RegistryObject<StairBlock> GLASS_STAIRS = registerBlock("glass_stairs", 
         () -> new StairBlock(Blocks.GLASS.defaultBlockState(),
-        BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+        BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .isViewBlocking((state, level, pos) -> false)));
     public static final RegistryObject<SlabBlock> GLASS_SLAB = registerBlock("glass_slab", 
-        () -> new SlabBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
-
-    public static final RegistryObject<PressurePlateBlock> GLASS_PRESSURE_PLATE = registerBlock("glass_pressure_plate", 
-        () -> new PressurePlateBlock(BlockSetType.IRON,
-        BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
-    public static final RegistryObject<ButtonBlock> GLASS_BUTTON = registerBlock("glass_button", 
-        () -> new ButtonBlock(BlockSetType.IRON, 1,
-        BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noCollission().noOcclusion()));
-
-    public static final RegistryObject<FenceGateBlock> GLASS_FENCE_GATE = registerBlock("glass_fence_gate", 
-        () -> new FenceGateBlock(WoodType.ACACIA, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+        () -> new SlabBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .isViewBlocking((state, level, pos) -> false)));
     public static final RegistryObject<WallBlock> GLASS_WALL = registerBlock("glass_wall", 
-        () -> new WallBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+        () -> new WallBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .isViewBlocking((state, level, pos) -> false)));
 
     public static final RegistryObject<DoorBlock> GLASS_DOOR = registerBlock("glass_door", 
-        () -> new DoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+        () -> new DoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
     public static final RegistryObject<TrapDoorBlock> GLASS_TRAPDOOR = registerBlock("glass_trapdoor", 
-        () -> new TrapDoorBlock(BlockSetType.IRON, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+        () -> new TrapDoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
             
 
     // Register Blocks with a name and a block object

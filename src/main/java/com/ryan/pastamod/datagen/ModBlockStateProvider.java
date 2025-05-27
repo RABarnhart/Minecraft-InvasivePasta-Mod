@@ -4,7 +4,6 @@ import com.ryan.pastamod.PastaMod;
 import com.ryan.pastamod.blocks.ModBlocks;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.references.Blocks.*;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -24,11 +23,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         stairsBlock(ModBlocks.GLASS_STAIRS.get(), blockTexture(Blocks.GLASS));
         slabBlock(ModBlocks.GLASS_SLAB.get(), blockTexture(Blocks.GLASS), blockTexture(Blocks.GLASS));
-
-        buttonBlock(ModBlocks.GLASS_BUTTON.get(), blockTexture(Blocks.GLASS));
-        pressurePlateBlock(ModBlocks.GLASS_PRESSURE_PLATE.get(), blockTexture(Blocks.GLASS));
-
-        fenceGateBlock(ModBlocks.GLASS_FENCE_GATE.get(), blockTexture(Blocks.GLASS));
         wallBlock(ModBlocks.GLASS_WALL.get(), blockTexture(Blocks.GLASS));
 
         doorBlockWithRenderType(ModBlocks.GLASS_DOOR.get(), modLoc("block/glass_door_bottom"), modLoc("block/glass_door_top"), "cutout");
@@ -36,8 +30,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockItem(ModBlocks.GLASS_STAIRS);
         blockItem(ModBlocks.GLASS_SLAB);
-        blockItem(ModBlocks.GLASS_PRESSURE_PLATE);
-        blockItem(ModBlocks.GLASS_FENCE_GATE);
         blockItem(ModBlocks.GLASS_TRAPDOOR, "_bottom");
     }
 

@@ -38,11 +38,8 @@ public class ModCreativeModeTabs {
             output.accept(ModBlocks.GLASS_SLAB.get());
             output.accept(ModBlocks.GLASS_STAIRS.get());
             output.accept(ModBlocks.GLASS_WALL.get());
-            output.accept(ModBlocks.GLASS_FENCE_GATE.get());
             output.accept(ModBlocks.GLASS_DOOR.get());
             output.accept(ModBlocks.GLASS_TRAPDOOR.get());
-            output.accept(ModBlocks.GLASS_BUTTON.get());
-            output.accept(ModBlocks.GLASS_PRESSURE_PLATE.get());
         })
         .build());
 

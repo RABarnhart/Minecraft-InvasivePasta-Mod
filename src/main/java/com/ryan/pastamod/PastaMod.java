@@ -88,6 +88,9 @@ public class PastaMod
             event.enqueueWork(() -> {
                 ItemBlockRenderTypes.setRenderLayer(ModBlocks.RAINBOW_GLASS_BLOCK.get(), RenderType.translucent());
                 ItemBlockRenderTypes.setRenderLayer(ModBlocks.AURORA_GLASS_BLOCK.get(), RenderType.translucent());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_STAIRS.get(), RenderType.translucent());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_SLAB.get(), RenderType.translucent());
+                ItemBlockRenderTypes.setRenderLayer(ModBlocks.GLASS_WALL.get(), RenderType.translucent());
             });
         }
 }
