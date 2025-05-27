@@ -37,18 +37,23 @@ public class ModBlocks {
     public static final RegistryObject<StairBlock> GLASS_STAIRS = registerBlock("glass_stairs", 
         () -> new StairBlock(Blocks.GLASS.defaultBlockState(),
         BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .sound(Blocks.GLASS.getSoundType(null, null, null, null))
             .isViewBlocking((state, level, pos) -> false)));
     public static final RegistryObject<SlabBlock> GLASS_SLAB = registerBlock("glass_slab", 
         () -> new SlabBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .sound(Blocks.GLASS.getSoundType(null, null, null, null))
             .isViewBlocking((state, level, pos) -> false)));
     public static final RegistryObject<WallBlock> GLASS_WALL = registerBlock("glass_wall", 
         () -> new WallBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .sound(Blocks.GLASS.getSoundType(null, null, null, null))
             .isViewBlocking((state, level, pos) -> false)));
 
     public static final RegistryObject<DoorBlock> GLASS_DOOR = registerBlock("glass_door", 
-        () -> new DoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+        () -> new DoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .sound(Blocks.GLASS.getSoundType(null, null, null, null))));
     public static final RegistryObject<TrapDoorBlock> GLASS_TRAPDOOR = registerBlock("glass_trapdoor", 
-        () -> new TrapDoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()));
+        () -> new TrapDoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .sound(Blocks.GLASS.getSoundType(null, null, null, null))));
             
 
     // Register Blocks with a name and a block object
