@@ -7,11 +7,9 @@ import com.ryan.pastamod.Items.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.TransparentBlock;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,20 +19,41 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS
         = DeferredRegister.create(ForgeRegistries.BLOCKS, "pastamod");
 
-    public static final RegistryObject<Block> RAINBOW_GLASS_BLOCK = registerBlock("rainbow_glass_block", 
-        () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-        ));
-
-    public static final RegistryObject<Block> AURORA_GLASS_BLOCK = registerBlock("aurora_glass_block", 
-        () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
-        ));
-
+        // CUSTOM BOOKSHELF
     public static final RegistryObject<Block> RAINBOW_BOOKSHELF_BLOCK = registerBlock("rainbow_bookshelf_block", 
-        () -> new Block(Block.Properties.of()
-            .strength(1f)
-            .mapColor(DyeColor.BROWN)
-            .sound(SoundType.WOOD)
-        ));
+    () -> new Block(Block.Properties.of()
+        .strength(1f)
+        .mapColor(DyeColor.BROWN)
+        .sound(SoundType.WOOD)
+    ));
+
+        // NEW GLASS BLOCKS
+    public static final RegistryObject<Block> RAINBOW_GLASS_BLOCK = registerBlock("rainbow_glass_block", 
+        () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+    public static final RegistryObject<Block> AURORA_GLASS_BLOCK = registerBlock("aurora_glass_block", 
+        () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+
+        // GLASS NON-BLOCK BLOCKS
+    public static final RegistryObject<StairBlock> GLASS_STAIRS = registerBlock("glass_stairs", 
+        () -> new StairBlock(Blocks.GLASS.defaultBlockState(),
+        BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .sound(Blocks.GLASS.getSoundType(null, null, null, null))
+            .isViewBlocking((state, level, pos) -> false)));
+    public static final RegistryObject<SlabBlock> GLASS_SLAB = registerBlock("glass_slab", 
+        () -> new SlabBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .sound(Blocks.GLASS.getSoundType(null, null, null, null))
+            .isViewBlocking((state, level, pos) -> false)));
+    public static final RegistryObject<WallBlock> GLASS_WALL = registerBlock("glass_wall", 
+        () -> new WallBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .sound(Blocks.GLASS.getSoundType(null, null, null, null))
+            .isViewBlocking((state, level, pos) -> false)));
+
+    public static final RegistryObject<DoorBlock> GLASS_DOOR = registerBlock("glass_door", 
+        () -> new DoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .sound(Blocks.GLASS.getSoundType(null, null, null, null))));
+    public static final RegistryObject<TrapDoorBlock> GLASS_TRAPDOOR = registerBlock("glass_trapdoor", 
+        () -> new TrapDoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
+            .sound(Blocks.GLASS.getSoundType(null, null, null, null))));
             
 
     // Register Blocks with a name and a block object
