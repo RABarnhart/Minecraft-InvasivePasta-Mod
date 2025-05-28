@@ -1,7 +1,7 @@
 {
     "creativetab.pastamod.pastamod_items_tab": "InvasivePasta Mod Items",
     "creativetab.pastamod.glass_block_tab": "Glass Blocks",
-    
+
     "item.pastamod.orange_poppi.effect.empty": "Orange Poppi",
     "item.pastamod.strawberry_lemon_poppi.effect.empty": "Strawberry Lemon Poppi",
     "item.pastamod.raspberry_rose_poppi.effect.empty": "Raspberry Rose Poppi",
@@ -9,5 +9,11 @@
 
     "block.pastamod.rainbow_bookshelf_block": "Rainbow Bookshelf",
     "block.pastamod.rainbow_glass_block": "Rainbow Glass",
-    "block.pastamod.aurora_glass_block": "Aurora Glass"
+    "block.pastamod.aurora_glass_block": "Aurora Glass",
+
+    "block.pastamod.glass_stairs": "Glass Stairs",
+    "block.pastamod.glass_slab": "Glass Slab",
+    "block.pastamod.glass_wall": "Glass Wall",
+    "block.pastamod.glass_door": "Glass Door",
+    "block.pastamod.glass_trapdoor": "Glass Trapdoor"
 }

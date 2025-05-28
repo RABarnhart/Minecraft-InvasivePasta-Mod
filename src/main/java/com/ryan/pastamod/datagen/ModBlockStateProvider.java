@@ -21,13 +21,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.RAINBOW_GLASS_BLOCK);
         blockWithItem(ModBlocks.AURORA_GLASS_BLOCK);
 
+        //TODO: Make a method that passes in block to make all non-blocks from block
         stairsBlock(ModBlocks.GLASS_STAIRS.get(), blockTexture(Blocks.GLASS));
         slabBlock(ModBlocks.GLASS_SLAB.get(), blockTexture(Blocks.GLASS), blockTexture(Blocks.GLASS));
         wallBlock(ModBlocks.GLASS_WALL.get(), blockTexture(Blocks.GLASS));
-
         doorBlockWithRenderType(ModBlocks.GLASS_DOOR.get(), modLoc("block/glass_door_bottom"), modLoc("block/glass_door_top"), "cutout");
         trapdoorBlockWithRenderType(ModBlocks.GLASS_TRAPDOOR.get(), modLoc("block/glass_trapdoor"), true, "cutout");
-
         blockItem(ModBlocks.GLASS_STAIRS);
         blockItem(ModBlocks.GLASS_SLAB);
         blockItem(ModBlocks.GLASS_TRAPDOOR, "_bottom");
