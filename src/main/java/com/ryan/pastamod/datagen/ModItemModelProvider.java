@@ -26,35 +26,23 @@ public class ModItemModelProvider extends ItemModelProvider{
         basicItem(ModItems.STRAWBERRY_LEMON_POPPI.get());
         basicItem(ModItems.RASPBERRY_ROSE_POPPI.get());
 
-        // wallItem(ModBlocks.GLASS_WALL, Blocks.GLASS);
-        // simpleBlockItem(ModBlocks.GLASS_DOOR);
-        // simpleBlockItem(ModBlocks.GLASS_TRAPDOOR);
-        // simpleBlockItem(ModBlocks.GLASS_STAIRS);
-        // simpleBlockItem(ModBlocks.GLASS_SLAB);
+        glassLikeBlockItem(ModBlocks.GLASS_STAIRS);
+        glassLikeBlockItem(ModBlocks.GLASS_SLAB);
+        // Use the inventory model for the wall item so it renders as a wall in inventory
+        withExistingParent(ModBlocks.GLASS_WALL.getId().getPath(), modLoc("block/glass_wall_inventory"));
+        simpleBlockItem(ModBlocks.GLASS_DOOR); // Use vanilla flat item model for door
     }
 
         // HELPER METHODS
-    public void buttonItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {
-    this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/button_inventory"))
-            .texture("texture",  ResourceLocation.fromNamespaceAndPath(PastaMod.MODID,
-                    "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
-    }
-
-    public void fenceItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {
-        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/fence_inventory"))
-                .texture("texture",  ResourceLocation.fromNamespaceAndPath(PastaMod.MODID,
-                        "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
-    }
-
-    public void wallItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {
-        this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(), mcLoc("block/wall_inventory"))
-                .texture("wall",  ResourceLocation.fromNamespaceAndPath(PastaMod.MODID,
-                        "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
-    }
-
     private ItemModelBuilder simpleBlockItem(RegistryObject<? extends Block> item) {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/generated")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(PastaMod.MODID,"item/" + item.getId().getPath()));
+    }
+
+    // Helper for glass-like block items using vanilla glass texture
+    private void glassLikeBlockItem(RegistryObject<? extends Block> block) {
+        // Use the block model as the parent so the item renders as a 3D block in the inventory, like vanilla glass
+        this.withExistingParent(block.getId().getPath(), modLoc("block/" + block.getId().getPath()));
     }
 }

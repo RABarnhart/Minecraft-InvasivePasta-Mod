@@ -31,7 +31,7 @@ public class ModCreativeModeTabs {
         .build());
 
             public static final RegistryObject<CreativeModeTab> GLASS_BLOCKS_TAB = CREATIVE_MODE_TABS.register("glass_blocks_tab",
-        () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.RAINBOW_BOOKSHELF_BLOCK.get()))
+        () -> CreativeModeTab.builder().icon(() -> new ItemStack(Blocks.GLASS))
         .title(Component.translatable("creativetab.pastamod.glass_blocks_tab"))
         .displayItems((itemDisplayParameters, output) -> {
             output.accept(Blocks.GLASS);

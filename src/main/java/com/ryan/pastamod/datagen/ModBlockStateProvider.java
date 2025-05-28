@@ -16,20 +16,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
         super(output, PastaMod.MODID, exFileHelper);
     }
 
+    @Override
     protected void registerStatesAndModels() {
         blockWithItemColumn(ModBlocks.RAINBOW_BOOKSHELF_BLOCK, "block/rainbow_bookshelf_block", "block/oak_planks");
         blockWithItem(ModBlocks.RAINBOW_GLASS_BLOCK);
         blockWithItem(ModBlocks.AURORA_GLASS_BLOCK);
 
-        //TODO: Make a method that passes in block to make all non-blocks from block
+        // GLASS NON-BLOCKS: Generate block models for stairs, slab, wall, door, trapdoor
         stairsBlock(ModBlocks.GLASS_STAIRS.get(), blockTexture(Blocks.GLASS));
         slabBlock(ModBlocks.GLASS_SLAB.get(), blockTexture(Blocks.GLASS), blockTexture(Blocks.GLASS));
         wallBlock(ModBlocks.GLASS_WALL.get(), blockTexture(Blocks.GLASS));
+        models().wallInventory("glass_wall_inventory", blockTexture(Blocks.GLASS));
         doorBlockWithRenderType(ModBlocks.GLASS_DOOR.get(), modLoc("block/glass_door_bottom"), modLoc("block/glass_door_top"), "cutout");
         trapdoorBlockWithRenderType(ModBlocks.GLASS_TRAPDOOR.get(), modLoc("block/glass_trapdoor"), true, "cutout");
-        blockItem(ModBlocks.GLASS_STAIRS);
-        blockItem(ModBlocks.GLASS_SLAB);
-        blockItem(ModBlocks.GLASS_TRAPDOOR, "_bottom");
+
+        // Ensure block item models use the block model as parent for 3D inventory rendering
+        simpleBlockItem(ModBlocks.GLASS_STAIRS.get(), models().getExistingFile(modLoc("block/glass_stairs")));
+        simpleBlockItem(ModBlocks.GLASS_SLAB.get(), models().getExistingFile(modLoc("block/glass_slab")));
+        simpleBlockItem(ModBlocks.GLASS_WALL.get(), models().getExistingFile(modLoc("block/glass_wall_inventory")));
+        simpleBlockItem(ModBlocks.GLASS_TRAPDOOR.get(), models().getExistingFile(modLoc("block/glass_trapdoor_bottom")));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
