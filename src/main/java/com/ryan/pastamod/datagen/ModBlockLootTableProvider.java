@@ -29,6 +29,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider{
         dropWhenSilkTouch(ModBlocks.GLASS_WALL.get());
         this.add(ModBlocks.GLASS_DOOR.get(), block -> createDoorTable(ModBlocks.GLASS_DOOR.get()));
         this.add(ModBlocks.GLASS_SLAB.get(), block -> createSlabItemTable(ModBlocks.GLASS_SLAB.get()));
+
+        // TODO: make a method that passes in a block to make modded non-blocks
     }
 
     @Override

@@ -26,6 +26,7 @@ public class ModItemModelProvider extends ItemModelProvider{
         basicItem(ModItems.STRAWBERRY_LEMON_POPPI.get());
         basicItem(ModItems.RASPBERRY_ROSE_POPPI.get());
 
+        // TODO: make a method that passes in a block to make modded non-blocks
         glassLikeBlockItem(ModBlocks.GLASS_STAIRS);
         glassLikeBlockItem(ModBlocks.GLASS_SLAB);
         // Use the inventory model for the wall item so it renders as a wall in inventory
