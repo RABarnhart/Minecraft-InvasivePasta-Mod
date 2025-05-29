@@ -27,6 +27,7 @@ public class ModCreativeModeTabs {
             output.accept(ModItems.STRAWBERRY_LEMON_POPPI.get());
             output.accept(ModItems.ORANGE_POPPI.get());
             output.accept(ModItems.RASPBERRY_ROSE_POPPI.get());
+            output.accept(ModItems.DYEBRUSH.get());
         })
         .build());
 
