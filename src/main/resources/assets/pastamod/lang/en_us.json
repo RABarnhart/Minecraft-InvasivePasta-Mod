@@ -17,7 +17,8 @@
     "block.pastamod.glass_door": "Glass Door",
     "block.pastamod.glass_trapdoor": "Glass Trapdoor",
 
-    "item.pastamod.dyebrush.white": "White Dye Brush",
+    "item.pastamod.dyebrush": "Dye Brush",
+    "item.pastamod.white_dyebrush": "White Dye Brush",
     "item.pastamod.red_dyebrush": "Red Dye Brush",
     "item.pastamod.orange_dyebrush": "Orange Dye Brush",
     "item.pastamod.yellow_dyebrush": "Yellow Dye Brush",
