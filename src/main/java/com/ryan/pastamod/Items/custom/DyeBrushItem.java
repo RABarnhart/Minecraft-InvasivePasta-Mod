@@ -45,7 +45,6 @@ public class DyeBrushItem extends Item {
     }
 
     private Block getRecoloredBlock(Block block, DyeColor color) {
-        // Wool
         for (DyeColor dye : DyeColor.values()) {
             if (block == getWoolBlock(dye)) return getWoolBlock(color);
             if (block == getCarpetBlock(dye)) return getCarpetBlock(color);

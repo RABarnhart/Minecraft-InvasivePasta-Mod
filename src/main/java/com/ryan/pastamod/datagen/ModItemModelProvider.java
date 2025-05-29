@@ -24,22 +24,22 @@ public class ModItemModelProvider extends ItemModelProvider{
         basicItem(ModItems.STRAWBERRY_LEMON_POPPI.get());
         basicItem(ModItems.RASPBERRY_ROSE_POPPI.get());
         basicItem(ModItems.DYEBRUSH.get());
-        basicItem(ModItems.RED_DYEBRUSH.get());
-        basicItem(ModItems.ORANGE_DYEBRUSH.get());
-        basicItem(ModItems.YELLOW_DYEBRUSH.get());
-        basicItem(ModItems.LIME_DYEBRUSH.get());
-        basicItem(ModItems.GREEN_DYEBRUSH.get());
-        basicItem(ModItems.CYAN_DYEBRUSH.get());
-        basicItem(ModItems.LIGHT_BLUE_DYEBRUSH.get());
-        basicItem(ModItems.BLUE_DYEBRUSH.get());
-        basicItem(ModItems.PURPLE_DYEBRUSH.get());
-        basicItem(ModItems.MAGENTA_DYEBRUSH.get());
-        basicItem(ModItems.PINK_DYEBRUSH.get());
-        basicItem(ModItems.BROWN_DYEBRUSH.get());
-        basicItem(ModItems.BLACK_DYEBRUSH.get());
-        basicItem(ModItems.GRAY_DYEBRUSH.get());
-        basicItem(ModItems.LIGHT_GRAY_DYEBRUSH.get());
-        basicItem(ModItems.WHITE_DYEBRUSH.get());
+        basicItem(ModItems.DYEBRUSH_RED.get());
+        basicItem(ModItems.DYEBRUSH_ORANGE.get());
+        basicItem(ModItems.DYEBRUSH_YELLOW.get());
+        basicItem(ModItems.DYEBRUSH_LIME.get());
+        basicItem(ModItems.DYEBRUSH_GREEN.get());
+        basicItem(ModItems.DYEBRUSH_CYAN.get());
+        basicItem(ModItems.DYEBRUSH_LIGHT_BLUE.get());
+        basicItem(ModItems.DYEBRUSH_BLUE.get());
+        basicItem(ModItems.DYEBRUSH_PURPLE.get());
+        basicItem(ModItems.DYEBRUSH_MAGENTA.get());
+        basicItem(ModItems.DYEBRUSH_PINK.get());
+        basicItem(ModItems.DYEBRUSH_BROWN.get());
+        basicItem(ModItems.DYEBRUSH_BLACK.get());
+        basicItem(ModItems.DYEBRUSH_GRAY.get());
+        basicItem(ModItems.DYEBRUSH_LIGHT_GRAY.get());
+        basicItem(ModItems.DYEBRUSH_WHITE.get());
 
         // TODO: make a method that passes in a block to make modded non-blocks
         glassLikeBlockItem(ModBlocks.GLASS_STAIRS);

@@ -28,22 +28,22 @@ public class ModCreativeModeTabs {
             output.accept(ModItems.ORANGE_POPPI.get());
             output.accept(ModItems.RASPBERRY_ROSE_POPPI.get());
             output.accept(ModItems.DYEBRUSH.get());
-            output.accept(ModItems.RED_DYEBRUSH.get());
-            output.accept(ModItems.ORANGE_DYEBRUSH.get());
-            output.accept(ModItems.YELLOW_DYEBRUSH.get());
-            output.accept(ModItems.LIME_DYEBRUSH.get());
-            output.accept(ModItems.GREEN_DYEBRUSH.get());
-            output.accept(ModItems.CYAN_DYEBRUSH.get());
-            output.accept(ModItems.LIGHT_BLUE_DYEBRUSH.get());
-            output.accept(ModItems.BLUE_DYEBRUSH.get());
-            output.accept(ModItems.PURPLE_DYEBRUSH.get());
-            output.accept(ModItems.MAGENTA_DYEBRUSH.get());
-            output.accept(ModItems.PINK_DYEBRUSH.get());
-            output.accept(ModItems.BROWN_DYEBRUSH.get());
-            output.accept(ModItems.BLACK_DYEBRUSH.get());
-            output.accept(ModItems.GRAY_DYEBRUSH.get());
-            output.accept(ModItems.LIGHT_GRAY_DYEBRUSH.get());
-            output.accept(ModItems.WHITE_DYEBRUSH.get());
+            output.accept(ModItems.DYEBRUSH_RED.get());
+            output.accept(ModItems.DYEBRUSH_ORANGE.get());
+            output.accept(ModItems.DYEBRUSH_YELLOW.get());
+            output.accept(ModItems.DYEBRUSH_LIME.get());
+            output.accept(ModItems.DYEBRUSH_GREEN.get());
+            output.accept(ModItems.DYEBRUSH_CYAN.get());
+            output.accept(ModItems.DYEBRUSH_LIGHT_BLUE.get());
+            output.accept(ModItems.DYEBRUSH_BLUE.get());
+            output.accept(ModItems.DYEBRUSH_PURPLE.get());
+            output.accept(ModItems.DYEBRUSH_MAGENTA.get());
+            output.accept(ModItems.DYEBRUSH_PINK.get());
+            output.accept(ModItems.DYEBRUSH_BROWN.get());
+            output.accept(ModItems.DYEBRUSH_BLACK.get());
+            output.accept(ModItems.DYEBRUSH_GRAY.get());
+            output.accept(ModItems.DYEBRUSH_LIGHT_GRAY.get());
+            output.accept(ModItems.DYEBRUSH_WHITE.get());
         })
         .build());
 

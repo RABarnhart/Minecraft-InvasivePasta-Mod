@@ -57,37 +57,37 @@ public class ModItems {
     public static final RegistryObject<Item> DYEBRUSH = ITEMS.register("dyebrush",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.WHITE));
 
-    public static final RegistryObject<Item> RED_DYEBRUSH = ITEMS.register("red_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_RED = ITEMS.register("dyebrush_red",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.RED));
-    public static final RegistryObject<Item> ORANGE_DYEBRUSH = ITEMS.register("orange_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_ORANGE = ITEMS.register("dyebrush_orange",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.ORANGE));
-    public static final RegistryObject<Item> YELLOW_DYEBRUSH = ITEMS.register("yellow_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_YELLOW = ITEMS.register("dyebrush_yellow",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.YELLOW));
-    public static final RegistryObject<Item> LIME_DYEBRUSH = ITEMS.register("lime_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_LIME = ITEMS.register("dyebrush_lime",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.LIME));
-    public static final RegistryObject<Item> GREEN_DYEBRUSH = ITEMS.register("green_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_GREEN = ITEMS.register("dyebrush_green",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.GREEN));
-    public static final RegistryObject<Item> CYAN_DYEBRUSH = ITEMS.register("cyan_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_CYAN = ITEMS.register("dyebrush_cyan",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.CYAN));
-    public static final RegistryObject<Item> LIGHT_BLUE_DYEBRUSH = ITEMS.register("light_blue_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_LIGHT_BLUE = ITEMS.register("dyebrush_light_blue",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.LIGHT_BLUE));
-    public static final RegistryObject<Item> BLUE_DYEBRUSH = ITEMS.register("blue_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_BLUE = ITEMS.register("dyebrush_blue",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.BLUE));
-    public static final RegistryObject<Item> PURPLE_DYEBRUSH = ITEMS.register("purple_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_PURPLE = ITEMS.register("dyebrush_purple",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.PURPLE));
-    public static final RegistryObject<Item> MAGENTA_DYEBRUSH = ITEMS.register("magenta_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_MAGENTA = ITEMS.register("dyebrush_magenta",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.MAGENTA));
-    public static final RegistryObject<Item> PINK_DYEBRUSH = ITEMS.register("pink_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_PINK = ITEMS.register("dyebrush_pink",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.PINK));
-    public static final RegistryObject<Item> BROWN_DYEBRUSH = ITEMS.register("brown_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_BROWN = ITEMS.register("dyebrush_brown",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.BROWN));
-    public static final RegistryObject<Item> BLACK_DYEBRUSH = ITEMS.register("black_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_BLACK = ITEMS.register("dyebrush_black",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.BLACK));
-    public static final RegistryObject<Item> GRAY_DYEBRUSH = ITEMS.register("gray_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_GRAY = ITEMS.register("dyebrush_gray",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.GRAY));
-    public static final RegistryObject<Item> LIGHT_GRAY_DYEBRUSH = ITEMS.register("light_gray_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_LIGHT_GRAY = ITEMS.register("dyebrush_light_gray",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.LIGHT_GRAY));
-    public static final RegistryObject<Item> WHITE_DYEBRUSH = ITEMS.register("white_dyebrush",
+    public static final RegistryObject<Item> DYEBRUSH_WHITE = ITEMS.register("dyebrush_white",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.WHITE));
 
     public static void register(IEventBus eventBus) {
