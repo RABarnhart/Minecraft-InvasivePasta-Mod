@@ -29,17 +29,19 @@ public class DyeBrushItem extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext pContext) {
-        Level level = pContext.getLevel();
-        Block clickedBlock = level.getBlockState(pContext.getClickedPos()).getBlock();
-        Block recolored = getRecoloredBlock(clickedBlock, dyeColor);
-        if (recolored != null && recolored != clickedBlock) {
-            if (!level.isClientSide()) {
-                level.setBlockAndUpdate(pContext.getClickedPos(), recolored.defaultBlockState());
-                pContext.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), ((ServerPlayer) pContext.getPlayer()),
-                        item -> pContext.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
-                level.playSound(null, pContext.getClickedPos(), SoundEvents.SLIME_JUMP_SMALL, SoundSource.BLOCKS);
+        if (this.dyeColor != null) {
+            Level level = pContext.getLevel();
+            Block clickedBlock = level.getBlockState(pContext.getClickedPos()).getBlock();
+            Block recolored = getRecoloredBlock(clickedBlock, dyeColor);
+            if (recolored != null && recolored != clickedBlock) {
+                if (!level.isClientSide()) {
+                    level.setBlockAndUpdate(pContext.getClickedPos(), recolored.defaultBlockState());
+                    pContext.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), ((ServerPlayer) pContext.getPlayer()),
+                            item -> pContext.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+                    level.playSound(null, pContext.getClickedPos(), SoundEvents.SLIME_JUMP_SMALL, SoundSource.BLOCKS);
+                }
+                return InteractionResult.SUCCESS;
             }
-            return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
     }

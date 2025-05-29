@@ -55,7 +55,7 @@ public class ModItems {
                 .build())));
 
     public static final RegistryObject<Item> DYEBRUSH = ITEMS.register("dyebrush",
-        () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.WHITE));
+        () -> new DyeBrushItem(new Item.Properties().durability(32), null));
 
     public static final RegistryObject<Item> DYEBRUSH_RED = ITEMS.register("dyebrush_red",
         () -> new DyeBrushItem(new Item.Properties().durability(32), DyeColor.RED));
