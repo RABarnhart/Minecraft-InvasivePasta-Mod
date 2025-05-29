@@ -24,22 +24,22 @@ public class ModItemModelProvider extends ItemModelProvider{
         basicItem(ModItems.STRAWBERRY_LEMON_POPPI.get());
         basicItem(ModItems.RASPBERRY_ROSE_POPPI.get());
         basicItem(ModItems.DYEBRUSH.get());
-        // basicItem(ModItems.RED_DYEBRUSH.get());
-        // basicItem(ModItems.ORANGE_DYEBRUSH.get());
-        // basicItem(ModItems.YELLOW_DYEBRUSH.get());
-        // basicItem(ModItems.LIME_DYEBRUSH.get());
-        // basicItem(ModItems.GREEN_DYEBRUSH.get());
-        // basicItem(ModItems.CYAN_DYEBRUSH.get());
-        // basicItem(ModItems.LIGHT_BLUE_DYEBRUSH.get());
-        // basicItem(ModItems.BLUE_DYEBRUSH.get());
-        // basicItem(ModItems.PURPLE_DYEBRUSH.get());
-        // basicItem(ModItems.MAGENTA_DYEBRUSH.get());
-        // basicItem(ModItems.PINK_DYEBRUSH.get());
-        // basicItem(ModItems.BROWN_DYEBRUSH.get());
-        // basicItem(ModItems.BLACK_DYEBRUSH.get());
-        // basicItem(ModItems.GRAY_DYEBRUSH.get());
-        // basicItem(ModItems.LIGHT_GRAY_DYEBRUSH.get());
-        // basicItem(ModItems.WHITE_DYEBRUSH.get());
+        basicItem(ModItems.RED_DYEBRUSH.get());
+        basicItem(ModItems.ORANGE_DYEBRUSH.get());
+        basicItem(ModItems.YELLOW_DYEBRUSH.get());
+        basicItem(ModItems.LIME_DYEBRUSH.get());
+        basicItem(ModItems.GREEN_DYEBRUSH.get());
+        basicItem(ModItems.CYAN_DYEBRUSH.get());
+        basicItem(ModItems.LIGHT_BLUE_DYEBRUSH.get());
+        basicItem(ModItems.BLUE_DYEBRUSH.get());
+        basicItem(ModItems.PURPLE_DYEBRUSH.get());
+        basicItem(ModItems.MAGENTA_DYEBRUSH.get());
+        basicItem(ModItems.PINK_DYEBRUSH.get());
+        basicItem(ModItems.BROWN_DYEBRUSH.get());
+        basicItem(ModItems.BLACK_DYEBRUSH.get());
+        basicItem(ModItems.GRAY_DYEBRUSH.get());
+        basicItem(ModItems.LIGHT_GRAY_DYEBRUSH.get());
+        basicItem(ModItems.WHITE_DYEBRUSH.get());
 
         // TODO: make a method that passes in a block to make modded non-blocks
         glassLikeBlockItem(ModBlocks.GLASS_STAIRS);
