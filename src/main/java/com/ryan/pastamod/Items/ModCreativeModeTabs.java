@@ -27,6 +27,23 @@ public class ModCreativeModeTabs {
             output.accept(ModItems.STRAWBERRY_LEMON_POPPI.get());
             output.accept(ModItems.ORANGE_POPPI.get());
             output.accept(ModItems.RASPBERRY_ROSE_POPPI.get());
+            output.accept(ModItems.DYEBRUSH.get());
+            output.accept(ModItems.DYEBRUSH_RED.get());
+            output.accept(ModItems.DYEBRUSH_ORANGE.get());
+            output.accept(ModItems.DYEBRUSH_YELLOW.get());
+            output.accept(ModItems.DYEBRUSH_LIME.get());
+            output.accept(ModItems.DYEBRUSH_GREEN.get());
+            output.accept(ModItems.DYEBRUSH_CYAN.get());
+            output.accept(ModItems.DYEBRUSH_LIGHT_BLUE.get());
+            output.accept(ModItems.DYEBRUSH_BLUE.get());
+            output.accept(ModItems.DYEBRUSH_PURPLE.get());
+            output.accept(ModItems.DYEBRUSH_MAGENTA.get());
+            output.accept(ModItems.DYEBRUSH_PINK.get());
+            output.accept(ModItems.DYEBRUSH_BROWN.get());
+            output.accept(ModItems.DYEBRUSH_BLACK.get());
+            output.accept(ModItems.DYEBRUSH_GRAY.get());
+            output.accept(ModItems.DYEBRUSH_LIGHT_GRAY.get());
+            output.accept(ModItems.DYEBRUSH_WHITE.get());
         })
         .build());
 

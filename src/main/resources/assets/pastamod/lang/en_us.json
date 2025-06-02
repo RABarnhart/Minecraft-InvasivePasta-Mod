@@ -15,5 +15,26 @@
     "block.pastamod.glass_slab": "Glass Slab",
     "block.pastamod.glass_wall": "Glass Wall",
     "block.pastamod.glass_door": "Glass Door",
-    "block.pastamod.glass_trapdoor": "Glass Trapdoor"
+    "block.pastamod.glass_trapdoor": "Glass Trapdoor",
+
+    "item.pastamod.dyebrush": "Dyebrush",
+    "item.pastamod.dyebrush_white": "White Dyebrush",
+    "item.pastamod.dyebrush_red": "Red Dyebrush",
+    "item.pastamod.dyebrush_orange": "Orange Dyebrush",
+    "item.pastamod.dyebrush_yellow": "Yellow Dyebrush",
+    "item.pastamod.dyebrush_lime": "Lime Dyebrush",
+    "item.pastamod.dyebrush_green": "Green Dyebrush",
+    "item.pastamod.dyebrush_cyan": "Cyan Dyebrush",
+    "item.pastamod.dyebrush_light_blue": "Light Blue Dyebrush",
+    "item.pastamod.dyebrush_blue": "Blue Dyebrush",
+    "item.pastamod.dyebrush_purple": "Purple Dyebrush",
+    "item.pastamod.dyebrush_magenta": "Magenta Dyebrush",
+    "item.pastamod.dyebrush_pink": "Pink Dyebrush",
+    "item.pastamod.dyebrush_brown": "Brown Dyebrush",
+    "item.pastamod.dyebrush_black": "Black Dyebrush",
+    "item.pastamod.dyebrush_gray": "Gray Dyebrush",
+    "item.pastamod.dyebrush_light_gray": "Light Gray Dyebrush",
+
+    "tooltip.pastamod.dyebrush.shift_down": "Mix this brush with dye to instantly change the color of concrete, stained glass, stained glass panes, wool, or dyed terracotta.",
+    "tooltip.pastamod.dyebrush": "Press §eShift§r for more Information!"
 }
