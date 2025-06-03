@@ -7,9 +7,11 @@ import com.ryan.pastamod.blocks.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItemModelProvider extends ItemModelProvider{
@@ -23,23 +25,23 @@ public class ModItemModelProvider extends ItemModelProvider{
         basicItem(ModItems.ORANGE_POPPI.get());
         basicItem(ModItems.STRAWBERRY_LEMON_POPPI.get());
         basicItem(ModItems.RASPBERRY_ROSE_POPPI.get());
-        basicItem(ModItems.DYEBRUSH.get());
-        basicItem(ModItems.DYEBRUSH_RED.get());
-        basicItem(ModItems.DYEBRUSH_ORANGE.get());
-        basicItem(ModItems.DYEBRUSH_YELLOW.get());
-        basicItem(ModItems.DYEBRUSH_LIME.get());
-        basicItem(ModItems.DYEBRUSH_GREEN.get());
-        basicItem(ModItems.DYEBRUSH_CYAN.get());
-        basicItem(ModItems.DYEBRUSH_LIGHT_BLUE.get());
-        basicItem(ModItems.DYEBRUSH_BLUE.get());
-        basicItem(ModItems.DYEBRUSH_PURPLE.get());
-        basicItem(ModItems.DYEBRUSH_MAGENTA.get());
-        basicItem(ModItems.DYEBRUSH_PINK.get());
-        basicItem(ModItems.DYEBRUSH_BROWN.get());
-        basicItem(ModItems.DYEBRUSH_BLACK.get());
-        basicItem(ModItems.DYEBRUSH_GRAY.get());
-        basicItem(ModItems.DYEBRUSH_LIGHT_GRAY.get());
-        basicItem(ModItems.DYEBRUSH_WHITE.get());
+        handheldItem(ModItems.DYEBRUSH);
+        handheldItem(ModItems.DYEBRUSH_RED);
+        handheldItem(ModItems.DYEBRUSH_ORANGE);
+        handheldItem(ModItems.DYEBRUSH_YELLOW);
+        handheldItem(ModItems.DYEBRUSH_LIME);
+        handheldItem(ModItems.DYEBRUSH_GREEN);
+        handheldItem(ModItems.DYEBRUSH_CYAN);
+        handheldItem(ModItems.DYEBRUSH_LIGHT_BLUE);
+        handheldItem(ModItems.DYEBRUSH_BLUE);
+        handheldItem(ModItems.DYEBRUSH_PURPLE);
+        handheldItem(ModItems.DYEBRUSH_MAGENTA);
+        handheldItem(ModItems.DYEBRUSH_PINK);
+        handheldItem(ModItems.DYEBRUSH_BROWN);
+        handheldItem(ModItems.DYEBRUSH_BLACK);
+        handheldItem(ModItems.DYEBRUSH_GRAY);
+        handheldItem(ModItems.DYEBRUSH_LIGHT_GRAY);
+        handheldItem(ModItems.DYEBRUSH_WHITE);
 
         // TODO: make a method that passes in a block to make modded non-blocks
         glassLikeBlockItem(ModBlocks.GLASS_STAIRS);
@@ -60,5 +62,10 @@ public class ModItemModelProvider extends ItemModelProvider{
     private void glassLikeBlockItem(RegistryObject<? extends Block> block) {
         // Use the block model as the parent so the item renders as a 3D block in the inventory, like vanilla glass
         this.withExistingParent(block.getId().getPath(), modLoc("block/" + block.getId().getPath()));
+    }
+
+    private ItemModelBuilder handheldItem(RegistryObject<?> item) {
+        return withExistingParent(item.getId().getPath(), "item/handheld")
+            .texture("layer0", modLoc("item/" + item.getId().getPath()));
     }
 }
