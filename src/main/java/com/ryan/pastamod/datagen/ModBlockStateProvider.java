@@ -4,11 +4,13 @@ import com.ryan.pastamod.PastaMod;
 import com.ryan.pastamod.blocks.ModBlocks;
 import com.ryan.pastamod.blocks.custom.SaltLampBlock;
 
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelBuilder;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -42,36 +44,50 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void customLamp() {
+        // Custom model: 13x13x13 cube, centered, sitting on ground
+        String modelNameOn = "salt_lamp_block_on";
+        String modelNameOff = "salt_lamp_block_off";
+        // ON model
+        models().withExistingParent(modelNameOn, "minecraft:block/block")
+            .texture("side", modLoc("block/salt_lamp_block_on"))
+            .texture("top", modLoc("block/salt_lamp_block_on_top"))
+            .texture("bottom", mcLoc("block/oak_planks"))
+            .element()
+                .from(2F, 0F, 2F).to(14F, 13F, 14F)
+                .face(Direction.NORTH).texture("#side").end()
+                .face(Direction.SOUTH).texture("#side").end()
+                .face(Direction.EAST).texture("#side").end()
+                .face(Direction.WEST).texture("#side").end()
+                .face(Direction.UP).texture("#top").end()
+                .face(Direction.DOWN).texture("#bottom").end()
+            .end();
+        // OFF model
+        models().withExistingParent(modelNameOff, "minecraft:block/block")
+            .texture("side", modLoc("block/salt_lamp_block_off"))
+            .texture("top", modLoc("block/salt_block"))
+            .texture("bottom", mcLoc("block/oak_planks"))
+            .element()
+                .from(2F, 0F, 2F).to(14F, 13F, 14F)
+                .face(Direction.NORTH).texture("#side").end()
+                .face(Direction.SOUTH).texture("#side").end()
+                .face(Direction.EAST).texture("#side").end()
+                .face(Direction.WEST).texture("#side").end()
+                .face(Direction.UP).texture("#top").end()
+                .face(Direction.DOWN).texture("#bottom").end()
+            .end();
         getVariantBuilder(ModBlocks.SALT_LAMP_BLOCK.get()).forAllStates(state -> {
             if(state.getValue(SaltLampBlock.CLICKED)) {
-                // ON: sides = salt_lamp_block_on, top = salt_lamp_block_on_top, bottom = oak_planks
                 return new ConfiguredModel[]{
-                    new ConfiguredModel(models().cubeBottomTop(
-                        "salt_lamp_block_on",
-                        modLoc("block/salt_lamp_block_on"), // sides
-                        mcLoc("block/oak_planks"), // bottom
-                        modLoc("block/salt_lamp_block_on_top") // top
-                    ))
+                    new ConfiguredModel(models().getExistingFile(modLoc("block/" + modelNameOn)))
                 };
             } else {
-                // OFF: sides = salt_lamp_block_off, top = salt_block, bottom = oak_planks
                 return new ConfiguredModel[]{
-                    new ConfiguredModel(models().cubeBottomTop(
-                        "salt_lamp_block_off",
-                        modLoc("block/salt_lamp_block_off"), // sides
-                        mcLoc("block/oak_planks"), // bottom
-                        modLoc("block/salt_block") // top
-                    ))
+                    new ConfiguredModel(models().getExistingFile(modLoc("block/" + modelNameOff)))
                 };
             }
         });
         // Block item uses ON state appearance
-        simpleBlockItem(ModBlocks.SALT_LAMP_BLOCK.get(), models().cubeBottomTop(
-            "salt_lamp_block_on",
-            modLoc("block/salt_lamp_block_on"),
-            mcLoc("block/oak_planks"),
-            modLoc("block/salt_lamp_block_on_top")
-        ));
+        simpleBlockItem(ModBlocks.SALT_LAMP_BLOCK.get(), models().getExistingFile(modLoc("block/" + modelNameOn)));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

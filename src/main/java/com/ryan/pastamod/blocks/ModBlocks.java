@@ -57,7 +57,7 @@ public class ModBlocks {
             .sound(Blocks.GLASS.getSoundType(null, null, null, null))));
 
     public static final RegistryObject<SaltLampBlock> SALT_LAMP_BLOCK = registerBlock("salt_lamp_block", 
-        () -> new SaltLampBlock(BlockBehaviour.Properties.of().strength(3f)
+        () -> new SaltLampBlock(BlockBehaviour.Properties.of().strength(3f).noOcclusion()
             .lightLevel(state -> state.getValue(SaltLampBlock.CLICKED) ? 15 : 0)));
             
 
