@@ -3,6 +3,7 @@ package com.ryan.pastamod.blocks;
 import java.util.function.Supplier;
 
 import com.ryan.pastamod.Items.ModItems;
+import com.ryan.pastamod.blocks.custom.SaltLampBlock;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
@@ -54,6 +55,10 @@ public class ModBlocks {
     public static final RegistryObject<TrapDoorBlock> GLASS_TRAPDOOR = registerBlock("glass_trapdoor", 
         () -> new TrapDoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().noOcclusion()
             .sound(Blocks.GLASS.getSoundType(null, null, null, null))));
+
+    public static final RegistryObject<SaltLampBlock> SALT_LAMP_BLOCK = registerBlock("salt_lamp_block", 
+        () -> new SaltLampBlock(BlockBehaviour.Properties.of().strength(3f)
+            .lightLevel(state -> state.getValue(SaltLampBlock.CLICKED) ? 15 : 0)));
             
 
     // Register Blocks with a name and a block object
