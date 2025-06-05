@@ -2,10 +2,13 @@ package com.ryan.pastamod.datagen;
 
 import com.ryan.pastamod.PastaMod;
 import com.ryan.pastamod.blocks.ModBlocks;
+import com.ryan.pastamod.blocks.custom.SaltLampBlock;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,6 +24,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItemColumn(ModBlocks.RAINBOW_BOOKSHELF_BLOCK, "block/rainbow_bookshelf_block", "block/oak_planks");
         blockWithItem(ModBlocks.RAINBOW_GLASS_BLOCK);
         blockWithItem(ModBlocks.AURORA_GLASS_BLOCK);
+        customLamp();
 
         // GLASS NON-BLOCKS: Generate block models for stairs, slab, wall, door, trapdoor
         stairsBlock(ModBlocks.GLASS_STAIRS.get(), blockTexture(Blocks.GLASS));
@@ -35,6 +39,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(ModBlocks.GLASS_SLAB.get(), models().getExistingFile(modLoc("block/glass_slab")));
         simpleBlockItem(ModBlocks.GLASS_WALL.get(), models().getExistingFile(modLoc("block/glass_wall_inventory")));
         simpleBlockItem(ModBlocks.GLASS_TRAPDOOR.get(), models().getExistingFile(modLoc("block/glass_trapdoor_bottom")));
+    }
+
+    private void customLamp() {
+        getVariantBuilder(ModBlocks.SALT_LAMP_BLOCK.get()).forAllStates(state -> {
+            if(state.getValue(SaltLampBlock.CLICKED)) {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("alexandrite_lamp_on",
+                        ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "alexandrite_lamp_on")))};
+            } else {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("alexandrite_lamp_off",
+                        ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "alexandrite_lamp_off")))};
+            }
+        });
+        simpleBlockItem(ModBlocks.SALT_LAMP_BLOCK.get(), models().cubeAll("alexandrite_lamp_on",
+                ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "alexandrite_lamp_on")));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
