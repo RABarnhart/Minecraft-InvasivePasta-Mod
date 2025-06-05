@@ -44,15 +44,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void customLamp() {
         getVariantBuilder(ModBlocks.SALT_LAMP_BLOCK.get()).forAllStates(state -> {
             if(state.getValue(SaltLampBlock.CLICKED)) {
-                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("alexandrite_lamp_on",
-                        ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "alexandrite_lamp_on")))};
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("salt_lamp_block_on",
+                        ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "salt_lamp_block_on")))};
             } else {
-                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("alexandrite_lamp_off",
-                        ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "alexandrite_lamp_off")))};
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("salt_lamp_block_off",
+                        ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "salt_lamp_block_off")))};
             }
         });
-        simpleBlockItem(ModBlocks.SALT_LAMP_BLOCK.get(), models().cubeAll("alexandrite_lamp_on",
-                ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "alexandrite_lamp_on")));
+        simpleBlockItem(ModBlocks.SALT_LAMP_BLOCK.get(), models().cubeAll("salt_lamp_block_on",
+                ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "salt_lamp_block_on")));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

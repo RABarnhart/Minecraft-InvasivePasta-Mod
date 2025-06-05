@@ -23,6 +23,7 @@ public class ModCreativeModeTabs {
             output.accept(ModBlocks.RAINBOW_BOOKSHELF_BLOCK.get());
             output.accept(ModBlocks.AURORA_GLASS_BLOCK.get());
             output.accept(ModBlocks.RAINBOW_GLASS_BLOCK.get());
+            output.accept(ModBlocks.SALT_LAMP_BLOCK.get());
             output.accept(ModItems.GRAPE_POPPI.get());
             output.accept(ModItems.STRAWBERRY_LEMON_POPPI.get());
             output.accept(ModItems.ORANGE_POPPI.get());
