@@ -26,7 +26,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItemColumn(ModBlocks.RAINBOW_BOOKSHELF_BLOCK, "block/rainbow_bookshelf_block", "block/oak_planks");
         blockWithItem(ModBlocks.RAINBOW_GLASS_BLOCK);
         blockWithItem(ModBlocks.AURORA_GLASS_BLOCK);
-        customLamp();
+        saltLamp();
 
         // GLASS NON-BLOCKS: Generate block models for stairs, slab, wall, door, trapdoor
         stairsBlock(ModBlocks.GLASS_STAIRS.get(), blockTexture(Blocks.GLASS));
@@ -43,15 +43,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockItem(ModBlocks.GLASS_TRAPDOOR.get(), models().getExistingFile(modLoc("block/glass_trapdoor_bottom")));
     }
 
-    private void customLamp() {
-        // Custom model: 13x13x13 cube, centered, sitting on ground
-        String modelNameOn = "salt_lamp_block_on";
-        String modelNameOff = "salt_lamp_block_off";
+    private void saltLamp() {
+        String modelOn = "salt_lamp_block_on";
+        String modelOff = "salt_lamp_block_off";
         // ON model
-        models().withExistingParent(modelNameOn, "minecraft:block/block")
+        models().withExistingParent(modelOn, "minecraft:block/block")
             .texture("side", modLoc("block/salt_lamp_block_on"))
             .texture("top", modLoc("block/salt_lamp_block_on_top"))
             .texture("bottom", mcLoc("block/oak_planks"))
+            .texture("particle", modLoc("block/salt_block"))
             .element()
                 .from(2F, 0F, 2F).to(14F, 13F, 14F)
                 .face(Direction.NORTH).texture("#side").end()
@@ -62,10 +62,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .face(Direction.DOWN).texture("#bottom").end()
             .end();
         // OFF model
-        models().withExistingParent(modelNameOff, "minecraft:block/block")
+        models().withExistingParent(modelOff, "minecraft:block/block")
             .texture("side", modLoc("block/salt_lamp_block_off"))
             .texture("top", modLoc("block/salt_block"))
             .texture("bottom", mcLoc("block/oak_planks"))
+            .texture("particle", modLoc("block/salt_block"))
             .element()
                 .from(2F, 0F, 2F).to(14F, 13F, 14F)
                 .face(Direction.NORTH).texture("#side").end()
@@ -78,16 +79,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         getVariantBuilder(ModBlocks.SALT_LAMP_BLOCK.get()).forAllStates(state -> {
             if(state.getValue(SaltLampBlock.CLICKED)) {
                 return new ConfiguredModel[]{
-                    new ConfiguredModel(models().getExistingFile(modLoc("block/" + modelNameOn)))
+                    new ConfiguredModel(models().getExistingFile(modLoc("block/" + modelOn)))
                 };
             } else {
                 return new ConfiguredModel[]{
-                    new ConfiguredModel(models().getExistingFile(modLoc("block/" + modelNameOff)))
+                    new ConfiguredModel(models().getExistingFile(modLoc("block/" + modelOff)))
                 };
             }
         });
-        // Block item uses ON state appearance
-        simpleBlockItem(ModBlocks.SALT_LAMP_BLOCK.get(), models().getExistingFile(modLoc("block/" + modelNameOn)));
+        simpleBlockItem(ModBlocks.SALT_LAMP_BLOCK.get(), models().getExistingFile(modLoc("block/" + modelOff)));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
