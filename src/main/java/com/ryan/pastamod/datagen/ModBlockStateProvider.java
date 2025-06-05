@@ -44,15 +44,34 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void customLamp() {
         getVariantBuilder(ModBlocks.SALT_LAMP_BLOCK.get()).forAllStates(state -> {
             if(state.getValue(SaltLampBlock.CLICKED)) {
-                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("salt_lamp_block_on",
-                        ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "salt_lamp_block_on")))};
+                // ON: sides = salt_lamp_block_on, top = salt_lamp_block_on_top, bottom = oak_planks
+                return new ConfiguredModel[]{
+                    new ConfiguredModel(models().cubeBottomTop(
+                        "salt_lamp_block_on",
+                        modLoc("block/salt_lamp_block_on"), // sides
+                        mcLoc("block/oak_planks"), // bottom
+                        modLoc("block/salt_lamp_block_on_top") // top
+                    ))
+                };
             } else {
-                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("salt_lamp_block_off",
-                        ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "salt_lamp_block_off")))};
+                // OFF: sides = salt_lamp_block_off, top = salt_block, bottom = oak_planks
+                return new ConfiguredModel[]{
+                    new ConfiguredModel(models().cubeBottomTop(
+                        "salt_lamp_block_off",
+                        modLoc("block/salt_lamp_block_off"), // sides
+                        mcLoc("block/oak_planks"), // bottom
+                        modLoc("block/salt_block") // top
+                    ))
+                };
             }
         });
-        simpleBlockItem(ModBlocks.SALT_LAMP_BLOCK.get(), models().cubeAll("salt_lamp_block_on",
-                ResourceLocation.fromNamespaceAndPath(PastaMod.MODID, "block/" + "salt_lamp_block_on")));
+        // Block item uses ON state appearance
+        simpleBlockItem(ModBlocks.SALT_LAMP_BLOCK.get(), models().cubeBottomTop(
+            "salt_lamp_block_on",
+            modLoc("block/salt_lamp_block_on"),
+            mcLoc("block/oak_planks"),
+            modLoc("block/salt_lamp_block_on_top")
+        ));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
